@@ -1,1 +1,74 @@
-/* This file is for your main application css. */
+body {
+    font-size: 20px;
+    margin: 4em 0;
+}
+
+.ui.container {
+    max-width: 800px!important;
+}
+
+.search-bar {
+    margin: 2em 0;
+}
+
+.search-bar input {
+    /* border-color: #bf51ea!important; */
+}
+
+.search-bar .ui.button {
+    font-size: 1em!important;
+    /* background-color: #bf51ea; */
+    /* color: white; */
+}
+
+h1, h2, h3, h4 {
+    color: #444;
+}
+
+a {
+    color: #bf51ea;
+    font-weight: bold;
+}
+
+.ui.list .list>.item>i.icon, .ui.list>.item>i.icon {
+    vertical-align: middle;
+}
+
+.description {
+    line-height: 1.6;
+}
+
+.header {
+    text-align: center;
+    margin: 4em 0;
+}
+
+.header h1 {
+    font-size: 4em;
+}
+
+.header p {
+    max-width: 80%;
+    margin: 1em auto;
+    color: #888;
+}
+
+.section {
+    margin: 4em 0;
+}
+
+.section h2 {
+    font-size: 2em;
+}
+
+ul {
+    line-height: 1.6;
+}
+
+p {
+    color: #888;
+}
+
+strong {
+    color: #444;
+}

@@ -7,29 +7,26 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello AffiliateCrawler!</title>
+    <title>Affiliate Crawler</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
 
   <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
-
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <div class="ui container">
+        <header class="header">
+            <h1>Affiliate Crawler</h1>
+            <p>Affiliate Crawler helps you monetize your blog or website by finding affiliate and referral opporunities you're leaving on the table.</p>
+        </header>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
 
     </div> <!-- /container -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

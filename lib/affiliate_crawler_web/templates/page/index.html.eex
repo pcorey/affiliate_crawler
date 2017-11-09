@@ -1,36 +1,37 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+<div id="crawl" class="ui fluid action input search-bar">
+    <input type="text" placeholder="URL to crawl for affiliate & referral links...">
+    <div class="ui button">Find links!</div>
 </div>
 
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
-  </div>
+<div class="results-loader ui centered inline loader" ></div>
 
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
+<div class="ui list results"></div>
+
+<div class="section" >
+    <h2>What is Affiliate Crawler?</h2>
+    <p>Affiliate Crawler is a tool designed to help you monetize your blog, website, and other online context. It works by crawling over one of your web page, looking for links to products and services that can be monetized with affiliate and referral links.</p>
+</div>
+
+
+<div class="section" >
+    <h2>How does Affiliate Crawler work?</h2>
+    <p>Affiliate Crawler is a tool designed to help you monetize your blog, website, and other online context. It works by crawling over one of your web page, looking for links to products and services that can be monetized with affiliate and referral links.</p>
+    <p>Currently, Affiliate Crawler looks for links monetizable through any of the services listed below:</p>
+    <ul class="affiliates">
+        <div class="ui active centered inline loader" ></div>
     </ul>
-  </div>
+    <p>We're always on the lookout for new affiliate and referral link programs that we can add to our collection. If you have any suggestions, be sure to join our mailing list and let us know!</p>
+</div>
+
+<div class="section" >
+    <h2>Are there any restrictions?</h2>
+    <p>This version of Affiliate Crawler is largely a proof of concept. Many of its current features are heavily limited.</p>
+    <p>The crawler that powers Affiliate Crawler will only dig two levels deep when looking for monetizable links. That means that we'll only crawl the page you give us, and any other internal pages linked directly from that page. <strong>Future versions of Affiliate Crawler will have a much deeper maximum depth.</strong></p>
+    <p>Additionally, in its current form Affiliate Crawler will only return the first twenty monetizable links it finds. <strong>Future versions of Affiliate Crawler will lift this restriction entirely!</strong></p>
+    <p>If you like the concept of Affiliate Crawler, let us know by signing up to receive updates!</p>
+</div>
+
+<div class="section" >
+    <h2>How was Affiliate Crawler made?</h2>
+    <p>The Affiliate Crawler project started as an <a href="http://www.east5th.co/blog/2017/10/09/learning-to-crawl-building-a-bare-bones-web-crawler-with-elixir/" >exploration into web crawling</a> with the <a href="https://elixir-lang.org/" >Elixir</a> programming language. </p>
 </div>

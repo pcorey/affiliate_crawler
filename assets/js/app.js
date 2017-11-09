@@ -1,21 +1,43 @@
-// Brunch automatically concatenates all files in your
-// watched paths. Those paths can be configured at
-// config.paths.watched in "brunch-config.js".
-//
-// However, those files will only be executed if
-// explicitly imported. The only exception are files
-// in vendor, which are never wrapped in imports and
-// therefore are always executed.
+$(document).ready(function() {
+    $.get('/affiliates', function(affiliates) {
+        $('.affiliates').html(
+            affiliates.map(function(affiliate) {
+                return $("<li class='affiliate'><a href='" + affiliate.link + "'>" + affiliate.name + '</a></li>');
+            })
+        );
+    });
 
-// Import dependencies
-//
-// If you no longer want to use a dependency, remember
-// to also remove its path from "config.paths.watched".
-import "phoenix_html"
-
-// Import local files
-//
-// Local files can be imported directly using relative
-// paths "./socket" or full ones "web/static/js/socket".
-
-// import socket from "./socket"
+    $('.search-bar .button').on('click', function() {
+        var url = $('.search-bar input').val() || '';
+        if (!url) {
+            return;
+        }
+        $('.results-loader').addClass('active');
+        $.get('/crawl?url=' + url, function(links) {
+            $('.results-loader').removeClass('active');
+            console.log('links', links);
+            if (!links || !links.length) {
+                return $('.results').html($("<p>We couldn't find any monetizable links given that URL!</p>"));
+            }
+            $('.results').html(
+                links.map(function(link) {
+                    return $(
+                        '<div class="item"> <i class="' +
+                            (!link.used ? 'yellow check' : 'green dollar') +
+                            ' icon"></i> <div class="content"> <div class="description"><a href="' +
+                            link.source +
+                            '">This page</a> links to <a href="' +
+                            link.target +
+                            '">' +
+                            link.target +
+                            '</a>. Consider using the <a href="' +
+                            link.affiliate.link +
+                            '">' +
+                            link.affiliate.name +
+                            '</a> to monetize this link.</div> </div> </div> '
+                    );
+                })
+            );
+        });
+    });
+});
