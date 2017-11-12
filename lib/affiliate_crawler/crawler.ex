@@ -5,7 +5,7 @@ defmodule AffiliateCrawler.Crawler do
   @default_options [follow_redirect: true, hackney: [:insecure]]
 
   def get_links(url, opts \\ []) do
-    url = URI.parse(url)
+    url = get_first_url(url)
     context = %{
       max_depth: Keyword.get(opts, :max_depth, @default_max_depth),
       headers: Keyword.get(opts, :headers, @default_headers),
@@ -14,6 +14,17 @@ defmodule AffiliateCrawler.Crawler do
     }
     get_links(url, [], context)
     |> Enum.uniq
+  end
+
+  defp get_first_url(url) do
+    case URI.parse(url) do
+      %URI{scheme: nil} ->
+        get_first_url("http://#{url}")
+      %URI{path: nil} ->
+        get_first_url("#{url}/")
+      %URI{} ->
+        URI.parse(url)
+    end
   end
 
   defp get_links(url, path, context) do
