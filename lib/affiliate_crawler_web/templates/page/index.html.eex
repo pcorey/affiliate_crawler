@@ -23,38 +23,39 @@
 <!--End mc_embed_signup-->
 
 <div class="section" >
-    <h2>What is Affiliate Crawler?</h2>
+    <h2 id="what-is-affiliate-crawler">What is Affiliate Crawler?</h2>
     <p>Affiliate Crawler is a tool designed to help you monetize your blog, website, and other online written content. It works by crawling over every page of your site, looking for links to products and services that can be monetized with affiliate or referral links.</p>
 </div>
 
 
 <div class="section" >
-    <h2>How does Affiliate Crawler work?</h2>
+    <h2 id="how-does-affiliate-crawler-work">How does Affiliate Crawler work?</h2>
     <p>You're a writer, blogger, or online educator and you've written thousands of words spread across dozens of pages throughout your site. What you may not realize is that the links spread throughout those posts, articles, and tutorials can be leveraged to <strong>bring in passive income and help support your content creation!</strong></p>
     <p>Currently, Affiliate Crawler digs through your site looking for links monetizable through any of the services listed below:</p>
     <ul class="affiliates">
         <div class="ui active centered inline loader" ></div>
     </ul>
-    <p>We're always on the lookout for new affiliate and referral programs we can add to our collection. If you have any suggestions, be sure to join our mailing list and let us know!</p>
+    <p>We're always on the lookout for new affiliate and referral programs we can add to our collection. If you have any suggestions, be sure to <a href="#want-to-stay-up-to-date" >join our mailing list</a> and let us know!</p>
 </div>
 
 <div class="section" >
-    <h2>What's the catch?</h2>
+    <h2 id="whats-the-catch">What's the catch?</h2>
     <p>This version of Affiliate Crawler is largely a proof of concept. Some of its current features are limited.</p>
     <p>The crawler that powers Affiliate Crawler will only dig two levels deep when looking for monetizable links. That means that we'll only crawl the page you give us, and any other internal pages linked directly from that page. <strong>This restriction will be lifted in future version of Affiliate Crawler.</strong></p>
+    <p>Additionally, Affiliate Crawler only works well with static pages. In its current form, Affiliate Crawler is unable to execute Javascript or render SPAs. Given enough demand, we'll be sure to add this feature in the future.</p>
     <!-- <p>Additionally, in its current form Affiliate Crawler will only return the first twenty monetizable links it finds. <strong>Future versions of Affiliate Crawler will lift this restriction entirely!</strong></p> -->
-    <p>If you like the concept of Affiliate Crawler, let us know by signing up to receive development updates!</p>
+    <p>If you like the concept of Affiliate Crawler, <a href="#want-to-stay-up-to-date" >let us know by signing up</a> to receive development updates!</p>
 </div>
 
 <div class="section" >
-    <h2>How was Affiliate Crawler made?</h2>
+    <h2 id="how-was-affiliate-crawler-made">How was Affiliate Crawler made?</h2>
     <p>The Affiliate Crawler project was born out of a desire to monetize my <a href="http://www.east5th.co/blog/" >my web development blog</a> in the least sleazy way possible. I wanted to put the hundreds of thousands of words I'd written to work, but at the same time, I didn't want to turn off my readers with blatant advertisements.</p>
     <p>I found that monetizing existing links in my posts and articles with affiliate links to be the perfect solution. Why not get paid for the products and services I was recommending?</p>
     <p>The process of searching for monetizable links soon became repetitive and time consuming. I thought to myself, <strong>"if only there way some way to automatically search my entire site for links that could be monetized!"</strong> And with that blast of inspiration, Affiliate Crawler was born.</p>
 </div>
 
 <div class="section" >
-    <h2>Want to stay up to date?</h2>
+    <h2 id="want-to-stay-up-to-date">Want to stay up to date?</h2>
     <p>Want to stay on the ball as we update our affiliate and referral program database? Have an interesting idea for a feature you'd like to see?</p>
     <!-- Begin MailChimp Signup Form -->
     <div id="mc_embed_signup">
