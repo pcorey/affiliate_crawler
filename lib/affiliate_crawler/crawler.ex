@@ -2,7 +2,7 @@ defmodule AffiliateCrawler.Crawler do
 
   @default_max_depth 3
   @default_headers []
-  @default_options [follow_redirect: true]
+  @default_options [follow_redirect: true, hackney: [:insecure]]
 
   def get_links(url, opts \\ []) do
     url = URI.parse(url)
@@ -13,7 +13,6 @@ defmodule AffiliateCrawler.Crawler do
       host: url.host
     }
     get_links(url, [], context)
-    |> Enum.map(&to_string/1)
     |> Enum.uniq
   end
 
@@ -24,7 +23,7 @@ defmodule AffiliateCrawler.Crawler do
       |> HTTPoison.get(context.headers, context.options)
       |> handle_response(path, url, context)
     else
-      [url]
+      [%{source: List.first(tl path), target: url}]
     end
   end
 
@@ -36,20 +35,21 @@ defmodule AffiliateCrawler.Crawler do
 
   defp handle_response({:ok, %{body: body}}, path, url, context) do
     IO.puts("Crawling \"#{url}\"...")
+    source = List.first(path)
     path = [url | path]
-    [url | body
+    [%{source: source, target: url} | body
            |> Floki.find("a")
            |> Floki.attribute("href")
            |> Enum.map(&URI.merge(url, &1))
            |> Enum.map(&to_string/1)
            |> Enum.reject(&Enum.member?(path, &1))
            |> Enum.map(&(Task.async(fn -> get_links(URI.parse(&1), [&1 | path], context) end)))
-           |> Enum.map(&Task.await/1)
+           |> Enum.map(&Task.await(&1, 30000))
            |> List.flatten]
   end
 
   defp handle_response(_response, _path, url, context) do
-    [url]
+    []
   end
 
 end
