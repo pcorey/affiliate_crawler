@@ -16,6 +16,11 @@ body {
     /* border: none !important; */
 }
 
+.search-bar.ui.action.input:not([class*="left action"]) input:focus {
+    border-color: #bf51ea !important;
+    border-right-color: #bf51ea !important;
+}
+
 /* .hero { */
 /*     background-color: #bf51ea; */
 /*     border: 4px solid #bf51ea; */
@@ -24,10 +29,13 @@ body {
 /*     /\* box-shadow: 0 0 5px #bf51ea; *\/ */
 /* } */
 
-.action.input .ui.button {
-    font-size: 1em!important;
+.search-bar .ui.button {
     background-color: #bf51ea;
     color: white;
+}
+
+.action.input .ui.button {
+    font-size: 1em!important;
 }
 
 /* .search-bar input::-webkit-input-placeholder { */
