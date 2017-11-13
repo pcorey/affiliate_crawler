@@ -21,6 +21,12 @@ defmodule AffiliateCrawler.Affiliates do
         used: ~r/do\.co/
       },
       %{
+        name: "Shopify Affiliate Program",
+        link: "https://www.shopify.com/affiliates?ref=east5th",
+        test: ~r/shopify\.com/,
+        used: ~r/ref=/
+      },
+      %{
         name: "iHerb Rewards Program",
         link: "https://www.iherb.com/info/rewards?rcode=PET9171",
         test: ~r/iherb\.com/,
