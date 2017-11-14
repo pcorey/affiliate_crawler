@@ -9,6 +9,12 @@ defmodule AffiliateCrawler.Affiliates do
         used: ~r/amzn\.to|tag=/
       },
       %{
+        name: "Bluehost Affiliate Program",
+        link: "https://www.bluehost.com/track/east5th/",
+        test: ~r/bluehost\.com/,
+        used: ~r/track/
+      },
+      %{
         name: "Coinbase Referral Program",
         link: "https://www.coinbase.com/invite_friends",
         test: ~r/coinbase\.com/,
