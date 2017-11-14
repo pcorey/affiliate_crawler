@@ -21,6 +21,12 @@ defmodule AffiliateCrawler.Affiliates do
         used: ~r/join/
       },
       %{
+        name: "Convertkit Affiliate Program",
+        link: "http://mbsy.co/convertkit/32108688",
+        test: ~r/convertkit/,
+        used: ~r/mbsy/
+      },
+      %{
         name: "DigitalOcean Referral Program",
         link: "https://www.digitalocean.com/referral-program/",
         test: ~r/digitalocean\.com/,
