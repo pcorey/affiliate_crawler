@@ -21,8 +21,8 @@ defmodule AffiliateCrawler.Affiliates do
         used: ~r/join/
       },
       %{
-        name: "Convertkit Affiliate Program",
-        link: "http://mbsy.co/convertkit/32108688",
+        name: "ConvertKit Affiliate Program",
+        link: "https://convertkit.com/affiliate/",
         test: ~r/convertkit/,
         used: ~r/mbsy/
       },
