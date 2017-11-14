@@ -17,6 +17,10 @@ $(document).ready(function() {
         if (!url) {
             return;
         }
+        if (history.pushState) {
+            let newUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?${url}`;
+            window.history.pushState({ path: newUrl }, '', newUrl);
+        }
         ga('send', {
             hitType: 'event',
             eventCategory: 'Crawler',
@@ -67,4 +71,10 @@ $(document).ready(function() {
         });
         return false;
     });
+
+    let url = document.location.search.substr(1);
+    if (url && $('.search-bar input').val() != url) {
+        $('.search-bar input').val(url);
+        $('.search-bar').trigger('submit');
+    }
 });
