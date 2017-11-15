@@ -5,7 +5,7 @@ defmodule AffiliateCrawler.Affiliates do
       %{
         name: "Amazon Affiliate Program",
         link: "https://affiliate-program.amazon.com/ref=as_li_ss_tl?ie=UTF8&linkCode=ll2&tag=east5th-20&linkId=63282cc153e252c42371187a8fccafa5",
-        test: ~r/amazon\.com/,
+        test: ~r/www\.amazon\.com/,
         used: ~r/amzn\.to|tag=/
       },
       %{
@@ -23,7 +23,7 @@ defmodule AffiliateCrawler.Affiliates do
       %{
         name: "ConvertKit Affiliate Program",
         link: "https://convertkit.com/affiliate/",
-        test: ~r/convertkit/,
+        test: ~r/convertkit\.com/,
         used: ~r/mbsy/
       },
       %{
